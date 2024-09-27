@@ -138,7 +138,9 @@ extension WeatherDetailViewController: WeatherDetailPresenterOutput {
         temperatureLabel.text = weatherDetails.temperature
         weatherDescriptionLabel.text = weatherDetails.description
         presenter?.loadImage(for: weatherDetails.iconName) { [weak self] image in
-            self?.weatherIconImageView.image = image
+            DispatchQueue.main.async {
+                self?.weatherIconImageView.image = image
+            }
         }
     }
 

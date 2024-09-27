@@ -93,11 +93,10 @@ final class WeatherDetailInteractorImpl: WeatherDetailInteractorInput {
     }
     
     func loadImage(for icon: String, completion: @escaping (UIImage?) -> Void) {
-        guard let imageLoadingService = imageLoadingService else {
+        guard let imageLoadingService, let iconUrl = URL(string: "\(Constants.iconUrlPrefix)\(icon)\(Constants.iconUrlSuffix)") else {
             completion(nil)
             return
         }
-        let iconUrl = URL(string: "\(Constants.iconUrlPrefix)\(icon)\(Constants.iconUrlSuffix)")!
         imageLoadingService.loadImage(from: iconUrl, completion: completion)
     }
 }

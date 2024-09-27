@@ -45,9 +45,6 @@ final class SearchResultPresenterImpl {
     }
 }
 
-// MARK: - SearchResultPresenterImpl + Private
-private extension SearchResultPresenterImpl {}
-
 // MARK: - SearchResultPresenterImpl + SearchResultPresenter
 extension SearchResultPresenterImpl: SearchResultPresenter {
     
